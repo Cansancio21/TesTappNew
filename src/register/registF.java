@@ -6,6 +6,8 @@
 package register;
 
 import config.dbConnector;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import testappnew.loginF;
 
@@ -22,6 +24,42 @@ public class registF extends javax.swing.JFrame {
     public registF() {
         initComponents();
     }
+    
+    public static String email,username;
+            
+    
+    public boolean duplicateCheck(){
+        
+        dbConnector dbc = new dbConnector();
+        
+        try{
+            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + us.getText() + "' OR u_email = '" + mail.getText() + "'";
+            ResultSet resultSet = dbc.getData(query);
+            
+            if(resultSet.next()){
+                email = resultSet.getString("u_email");
+                if(email.equals(mail.getText())){
+                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
+                      mail.setText("");
+                }
+                username = resultSet.getString("u_username");
+                if(username.equals(us.getText())){
+                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
+                      us.setText("");
+            }
+            return true;
+            }else{
+                return false;
+            }
+          
+        }catch (SQLException ex) {
+            System.out.println(""+ex);
+            return false;
+        }
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,15 +140,38 @@ public class registF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dbConnector dbc = new dbConnector();
+        
+        
+        
+        
+        if(fn.getText().isEmpty()|| ln.getText().isEmpty() || mail.getText().isEmpty()
+                || us.getText().isEmpty()|| pw.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields are required!");
+        }else if(pw.getText().length() < 8){
+            JOptionPane.showMessageDialog(null, "Characters password is 8 above!");
+            pw.setText("");
+        }else if(duplicateCheck()){
+            System.out.println("Duplicate Exist!");
+            
+        }else{
+            
+             dbConnector dbc = new dbConnector();
        
       if (dbc.insertData("INSERT INTO tbl_user (u_fname, u_lname, u_email, u_username, u_password, u_type, u_status) VALUES('"
      + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','Pending')")){
           
+        
           JOptionPane.showMessageDialog(null, "Inserted Successfully!");
+          loginF ads = new loginF();
+         ads.setVisible(true);
+         this.dispose();
+          
       }else{
           JOptionPane.showMessageDialog(null, "Connection Error!");
       }
+            
+        }        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
