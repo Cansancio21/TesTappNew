@@ -21,9 +21,9 @@ public class dbConnector {
     
     private Connection connect;
     
-     public dbConnector(){
+      public dbConnector(){
             try{
-                connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/sampledbs", "root", "");
+                connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbtest", "root", "");
             }catch(SQLException ex){
                     System.out.println("Can't connect to database: "+ex.getMessage());
             }

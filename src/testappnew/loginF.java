@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import register.registF;
+import user.userDash;
 
 /**
  *
@@ -25,12 +26,29 @@ public class loginF extends javax.swing.JFrame {
         initComponents();
     }
     
+    static String status;
+    static String type;
+    static String fname;
+    static String lname;
+    
     public static boolean loginAcc(String username, String password){
+        
+        
         dbConnector connector = new dbConnector();
+        
         try{
             String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "' AND u_password = '" + password + "'";
             ResultSet resultSet = connector.getData(query);
-            return resultSet.next();
+           if(resultSet.next()){
+               status = resultSet.getString("u_status");
+                 type = resultSet.getString("u_type");
+                 fname = resultSet.getString("u_fname");
+                 lname = resultSet.getString("u_lname");
+               return true;
+               
+           }else{
+               return false;
+           }
         }catch (SQLException ex) {
             return false;
         }
@@ -47,8 +65,8 @@ public class loginF extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        user = new javax.swing.JTextField();
-        pass = new javax.swing.JTextField();
+        un = new javax.swing.JTextField();
+        pw = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -63,8 +81,8 @@ public class loginF extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("LOG-IN FORM");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 103, 35));
-        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 150, -1));
-        getContentPane().add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 150, -1));
+        getContentPane().add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 150, -1));
+        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 150, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("UserName");
@@ -107,19 +125,35 @@ public class loginF extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(loginAcc(user.getText(), pass.getText())){
-           JOptionPane.showMessageDialog(null, "login Success! ");
-           dashboard ads = new dashboard();
-           ads.setVisible(true);
-           this.dispose();
-       }else{
-           JOptionPane.showMessageDialog(null, "login Failed! ");
-           JOptionPane.showMessageDialog(null, "Try Again! ");
-           loginF ads = new loginF();
-           ads.setVisible(true);
-           this.dispose();
-       }
+      if(loginAcc(un.getText(), pw.getText())){
+          if(status.equals("Active")){
+              JOptionPane.showMessageDialog(null, "in active");
+          }else{
+              if(!type.equals("Admin")){
+                  JOptionPane.showMessageDialog(null, "login");
+                  dashboard ads = new dashboard();
+                  ads.account_fname.setText(""+lname);
+                  ads.setVisible(true);
+                  this.dispose();
+              }else if(type.equals("User")){
+                  JOptionPane.showMessageDialog(null, "login");
+                  userDash uds = new userDash();
+                  uds.user_account.setText(""+fname);
+                  uds.setVisible(true);
+                  this.dispose();
+              }else{
+                   JOptionPane.showMessageDialog(null, "No account");
+              }
+          }
+          
+      }else{
+          JOptionPane.showMessageDialog(null, "Invalid Account");
+      }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -177,7 +211,7 @@ public class loginF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField pass;
-    private javax.swing.JTextField user;
+    private javax.swing.JTextField pw;
+    private javax.swing.JTextField un;
     // End of variables declaration//GEN-END:variables
 }
