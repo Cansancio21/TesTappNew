@@ -129,10 +129,10 @@ public class loginF extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       if(loginAcc(un.getText(), pw.getText())){
-          if(status.equals("Active")){
+          if(!status.equals("Active")){
               JOptionPane.showMessageDialog(null, "in active");
           }else{
-              if(!type.equals("Admin")){
+              if(type.equals("Admin")){
                   JOptionPane.showMessageDialog(null, "login");
                   dashboard ads = new dashboard();
                   ads.account_fname.setText(""+lname);
