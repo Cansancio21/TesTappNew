@@ -116,7 +116,7 @@ public class registF extends javax.swing.JFrame {
         getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 190, -1));
         getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 190, -1));
 
-        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "user", "Admin", " " }));
+        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", " " }));
         getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
 
         jButton1.setText("Cancel");

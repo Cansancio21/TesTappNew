@@ -8,8 +8,10 @@ package admin;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.TableModel;
 
 import net.proteanit.sql.DbUtils;
+import testappnew.loginF;
 
 
 /**
@@ -62,6 +64,8 @@ public class userLoginF extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         usersOnly = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +80,7 @@ public class userLoginF extends javax.swing.JFrame {
         jLabel3.setText("USERS");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 50, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 330));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 400));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,9 +112,30 @@ public class userLoginF extends javax.swing.JFrame {
 
             }
         ));
+        usersOnly.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usersOnlyMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(usersOnly);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 520, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 460, 260));
+
+        jButton1.setText("Clear");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+
+        jButton2.setText("Save");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -121,6 +146,38 @@ public class userLoginF extends javax.swing.JFrame {
      ds.setVisible(true);
      this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        loginF ads = new loginF();
+        ads.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        loginF ads = new loginF();
+        ads.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void usersOnlyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usersOnlyMouseClicked
+        int rowindex = usersOnly.getSelectedRow();
+        
+        TableModel model = usersOnly.getModel();
+        String id = model.getValueAt(rowindex, 0).toString();
+        
+        dbConnector dbc = new dbConnector();
+        try{
+            ResultSet rs = dbc.getData("SELECT * FROM tbl_user WHERE u_id = '"+id+"");
+            if(rs.next()){
+                uid.setText(rs.getString("u_id"));
+                 fn.setText(rs.getString("u_fname"));
+                  ln.setText(rs.getString("u_lname"));
+                   ln.setText(rs.getString("u_lname"));
+            }
+        }catch(SQLException ex){
+            System.out.println(""+ex);
+        }
+    }//GEN-LAST:event_usersOnlyMouseClicked
 
     /**
      * @param args the command line arguments
@@ -159,6 +216,8 @@ public class userLoginF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
