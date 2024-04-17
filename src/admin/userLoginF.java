@@ -8,9 +8,12 @@ package admin;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
 import net.proteanit.sql.DbUtils;
+import static register.registF.email;
+import static register.registF.username;
 import testappnew.loginF;
 
 
@@ -40,11 +43,41 @@ public class userLoginF extends javax.swing.JFrame {
             System.out.println("Errors: "+ex.getMessage());
         
         }
-        
-    
-    
-        
+     
     }
+    
+    
+    public boolean duplicateCheck(){
+        
+        dbConnector dbc = new dbConnector();
+        
+        try{
+            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + us.getText() + "' OR u_email = '" + mail.getText() + "'";
+            ResultSet resultSet = dbc.getData(query);
+            
+            if(resultSet.next()){
+                email = resultSet.getString("u_email");
+                if(email.equals(mail.getText())){
+                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
+                      mail.setText("");
+                }
+                username = resultSet.getString("u_username");
+                if(username.equals(us.getText())){
+                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
+                      us.setText("");
+            }
+            return true;
+            }else{
+                return false;
+            }
+          
+        }catch (SQLException ex) {
+            System.out.println(""+ex);
+            return false;
+        }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,6 +99,22 @@ public class userLoginF extends javax.swing.JFrame {
         usersOnly = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        ut = new javax.swing.JComboBox<>();
+        ur = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        pw = new javax.swing.JTextField();
+        us = new javax.swing.JTextField();
+        mail = new javax.swing.JTextField();
+        ln = new javax.swing.JTextField();
+        fn = new javax.swing.JTextField();
+        uid = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,7 +136,7 @@ public class userLoginF extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("USER-LOGIN FORM");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 163, 34));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 163, 34));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("USERS");
@@ -100,9 +149,9 @@ public class userLoginF extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 60, 20));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 60, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 540, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 60));
 
         usersOnly.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,7 +168,7 @@ public class userLoginF extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(usersOnly);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 460, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 420, 260));
 
         jButton1.setText("Clear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +184,48 @@ public class userLoginF extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+
+        jLabel6.setText("Users ID");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 20));
+
+        jLabel7.setText("First Name");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
+
+        jLabel8.setText("Last Name");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+
+        jLabel9.setText("Gmail");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
+
+        jLabel10.setText("UserName");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+
+        jLabel11.setText("PassWord");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, 20));
+
+        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin" }));
+        ut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 160, -1));
+
+        ur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));
+        getContentPane().add(ur, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 160, -1));
+
+        jLabel12.setText("User Type");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
+
+        jLabel14.setText("User Status");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
+        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 160, -1));
+        getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 160, -1));
+        getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 160, -1));
+        getContentPane().add(ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 160, -1));
+        getContentPane().add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 160, -1));
+        getContentPane().add(uid, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 160, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -154,9 +244,38 @@ public class userLoginF extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        loginF ads = new loginF();
-        ads.setVisible(true);
-        this.dispose();
+       
+        if(fn.getText().isEmpty()|| ln.getText().isEmpty() || mail.getText().isEmpty()
+                || us.getText().isEmpty()|| pw.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields are required!");
+        }else if(pw.getText().length() < 8){
+            JOptionPane.showMessageDialog(null, "Characters password is 8 above!");
+            pw.setText("");
+        }else if(duplicateCheck()){
+            System.out.println("Duplicate Exist!");
+            
+        }else{
+            
+             dbConnector dbc = new dbConnector();
+       
+      if (dbc.insertData("INSERT INTO tbl_user "
+     + "(u_fname, u_lname, u_email, u_username, u_password, u_type, u_status) VALUES('"
+     + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() 
+     + "','" + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','Pending')")){
+          
+        
+          JOptionPane.showMessageDialog(null, "Inserted Successfully!");
+         display();
+          
+      }else{
+          JOptionPane.showMessageDialog(null, "Connection Error!");
+      }
+            
+        }        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void usersOnlyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usersOnlyMouseClicked
@@ -172,12 +291,20 @@ public class userLoginF extends javax.swing.JFrame {
                 uid.setText(rs.getString("u_id"));
                  fn.setText(rs.getString("u_fname"));
                   ln.setText(rs.getString("u_lname"));
-                   ln.setText(rs.getString("u_lname"));
+                  mail.setText(rs.getString("u_email"));
+                  us.setText(rs.getString("u_username"));
+                  pw.setText(rs.getString("u_password"));
+                  ut.setSelectedItem(rs.getString("u_type"));
+                   ur.setSelectedItem(rs.getString("u_status"));
             }
         }catch(SQLException ex){
             System.out.println(""+ex);
         }
     }//GEN-LAST:event_usersOnlyMouseClicked
+
+    private void utActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_utActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,16 +343,32 @@ public class userLoginF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField fn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField ln;
+    private javax.swing.JTextField mail;
+    private javax.swing.JTextField pw;
+    private javax.swing.JTextField uid;
+    private javax.swing.JComboBox<String> ur;
+    private javax.swing.JTextField us;
     private javax.swing.JTable usersOnly;
+    private javax.swing.JComboBox<String> ut;
     // End of variables declaration//GEN-END:variables
 }
