@@ -9,7 +9,7 @@ import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import testappnew.loginF;
+import jekoy.loginF;
 
 
 /**

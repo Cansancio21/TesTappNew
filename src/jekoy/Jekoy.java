@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testappnew;
+package jekoy;
 
 /**
  *
  * @author User
  */
-public class TesTappNew {
+public class Jekoy {
 
     /**
      * @param args the command line arguments
