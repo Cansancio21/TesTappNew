@@ -6,6 +6,7 @@
 package user;
 
 import admin.*;
+import config.Session;
 import javax.swing.JOptionPane;
 import testappnew.loginF;
 
@@ -34,7 +35,7 @@ public class userDash extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        user_account = new javax.swing.JLabel();
+        acc_fname = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -42,6 +43,11 @@ public class userDash extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 255));
@@ -58,9 +64,9 @@ public class userDash extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
-        user_account.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        user_account.setText("USER");
-        jPanel1.add(user_account, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 50, 30));
+        acc_fname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        acc_fname.setText("USER");
+        jPanel1.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 50, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 320));
 
@@ -110,6 +116,18 @@ public class userDash extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+       Session sess = Session.getInstance();
+        
+        if(sess.getUid() == 0){
+         JOptionPane.showMessageDialog(null, "No account, Login First!");
+        loginF lf = new loginF();
+        lf.setVisible(true);
+        this.dispose();   
+        }
+        acc_fname.setText(""+sess.getFname());
+    }//GEN-LAST:event_formWindowActivated
+
     /**
      * @param args the command line arguments
      */
@@ -147,6 +165,7 @@ public class userDash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel acc_fname;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -155,6 +174,5 @@ public class userDash extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    public javax.swing.JLabel user_account;
     // End of variables declaration//GEN-END:variables
 }

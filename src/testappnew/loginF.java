@@ -6,6 +6,8 @@
 package testappnew;
 
 import admin.dashboard;
+import config.Session;
+import static config.Session.getInstance;
 import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,8 +30,7 @@ public class loginF extends javax.swing.JFrame {
     
     static String status;
     static String type;
-    static String fname;
-    static String lname;
+   
     
     public static boolean loginAcc(String username, String password){
         
@@ -42,8 +43,15 @@ public class loginF extends javax.swing.JFrame {
            if(resultSet.next()){
                status = resultSet.getString("u_status");
                  type = resultSet.getString("u_type");
-                 fname = resultSet.getString("u_fname");
-                 lname = resultSet.getString("u_lname");
+                 Session sess = Session.getInstance();
+                 sess.setUid(resultSet.getInt("u_id"));
+                 sess.setFname(resultSet.getString("u_fname"));
+                 sess.setLname(resultSet.getString("u_lname"));
+                 sess.setEmail(resultSet.getString("u_email"));
+                 sess.setUsername(resultSet.getString("u_username"));
+                 sess.setType(resultSet.getString("u_type"));
+                 sess.setStatus(resultSet.getString("u_status"));
+                 
                return true;
                
            }else{
@@ -133,14 +141,12 @@ public class loginF extends javax.swing.JFrame {
           }else{
               if(type.equals("Admin")){
                   JOptionPane.showMessageDialog(null, "login");
-                  dashboard ads = new dashboard();
-                  ads.account_fname.setText(""+lname);
+                  dashboard ads = new dashboard();                
                   ads.setVisible(true);
                   this.dispose();
               }else if(type.equals("User")){
                   JOptionPane.showMessageDialog(null, "login");
-                  userDash uds = new userDash();
-                  uds.user_account.setText(""+fname);
+                  userDash uds = new userDash();              
                   uds.setVisible(true);
                   this.dispose();
               }else{

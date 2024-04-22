@@ -5,6 +5,7 @@
  */
 package admin;
 
+import config.Session;
 import javax.swing.JOptionPane;
 import testappnew.loginF;
 
@@ -33,7 +34,8 @@ public class dashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        account_fname = new javax.swing.JLabel();
+        acc_fname = new javax.swing.JLabel();
+        acc_lname = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -41,7 +43,11 @@ public class dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 450));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 255));
@@ -58,9 +64,13 @@ public class dashboard extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
-        account_fname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        account_fname.setText("ADMIN");
-        jPanel1.add(account_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 50, 30));
+        acc_fname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        acc_fname.setText("             ADMIN");
+        jPanel1.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 140, 20));
+
+        acc_lname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        acc_lname.setText("             ADMIN");
+        jPanel1.add(acc_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 140, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 320));
 
@@ -110,6 +120,19 @@ public class dashboard extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Session sess = Session.getInstance();
+        
+        if(sess.getUid() == 0){
+         JOptionPane.showMessageDialog(null, "No account, Login First!");
+        loginF lf = new loginF();
+        lf.setVisible(true);
+        this.dispose();   
+        }
+        acc_fname.setText(""+sess.getFname());
+        acc_lname.setText(""+sess.getLname());
+    }//GEN-LAST:event_formWindowActivated
+
     /**
      * @param args the command line arguments
      */
@@ -146,7 +169,8 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel account_fname;
+    public javax.swing.JLabel acc_fname;
+    public javax.swing.JLabel acc_lname;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
