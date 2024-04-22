@@ -5,7 +5,7 @@
  */
 package user;
 
-import admin.*;
+
 import config.Session;
 import javax.swing.JOptionPane;
 import testappnew.loginF;
@@ -93,9 +93,9 @@ public class userDash extends javax.swing.JFrame {
         jLabel4.setBounds(60, 10, 50, 70);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("USERS");
+        jLabel5.setText("ACCOUNT");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(60, 80, 50, 20);
+        jLabel5.setBounds(60, 80, 60, 20);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, 130));
 
@@ -111,9 +111,9 @@ public class userDash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-       userLoginF us = new userLoginF();
-       us.setVisible(true);
-       this.dispose();
+        accountD ads = new accountD();
+        ads.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

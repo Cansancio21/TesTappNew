@@ -6,14 +6,18 @@
 package testappnew;
 
 import admin.dashboard;
+
+import config.PassWordH;
 import config.Session;
-import static config.Session.getInstance;
+
 import config.dbConnector;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import register.registF;
 import user.userDash;
+
 
 /**
  *
@@ -38,10 +42,17 @@ public class loginF extends javax.swing.JFrame {
         dbConnector connector = new dbConnector();
         
         try{
-            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "' AND u_password = '" + password + "'";
+            String query = "SELECT * FROM tbl_user  WHERE u_username = '" + username + "'";
             ResultSet resultSet = connector.getData(query);
            if(resultSet.next()){
-               status = resultSet.getString("u_status");
+               
+          
+               String hashedPass = resultSet.getString("u_password");
+               String rehashedPass = PassWordH.hashPassword(password);
+               
+                  
+               if(hashedPass.equals(rehashedPass)){
+                 status = resultSet.getString("u_status");
                  type = resultSet.getString("u_type");
                  Session sess = Session.getInstance();
                  sess.setUid(resultSet.getInt("u_id"));
@@ -52,12 +63,15 @@ public class loginF extends javax.swing.JFrame {
                  sess.setType(resultSet.getString("u_type"));
                  sess.setStatus(resultSet.getString("u_status"));
                  
-               return true;
-               
-           }else{
-               return false;
-           }
-        }catch (SQLException ex) {
+                 return true;  
+                 }else{
+                   return false;
+               }
+          
+                 }else{
+                 return false;
+             }
+           }catch (SQLException | NoSuchAlgorithmException ex) {
             return false;
         }
 

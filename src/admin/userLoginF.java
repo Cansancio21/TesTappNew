@@ -41,7 +41,7 @@ public class userLoginF extends javax.swing.JFrame {
          
         try{
             dbConnector dbc = new dbConnector();
-            ResultSet rs = dbc.getData("SELECT u_id, u_fname, u_lname, u_email FROM tbl_user");
+            ResultSet rs = dbc.getData("SELECT u_id, u_fname, u_lname, u_email, u_status FROM tbl_user");
             usersOnly.setModel(DbUtils.resultSetToTableModel(rs));
              rs.close();
         }catch(SQLException ex){

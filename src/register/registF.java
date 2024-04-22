@@ -5,7 +5,9 @@
  */
 package register;
 
+import config.PassWordH;
 import config.dbConnector;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -81,10 +83,10 @@ public class registF extends javax.swing.JFrame {
         ln = new javax.swing.JTextField();
         mail = new javax.swing.JTextField();
         us = new javax.swing.JTextField();
-        pw = new javax.swing.JTextField();
         ut = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        pw = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(650, 450));
@@ -114,7 +116,6 @@ public class registF extends javax.swing.JFrame {
         getContentPane().add(ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
         getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, -1));
         getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 190, -1));
-        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 190, -1));
 
         ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", " " }));
         getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
@@ -134,6 +135,7 @@ public class registF extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
+        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 190, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -156,9 +158,13 @@ public class registF extends javax.swing.JFrame {
         }else{
             
              dbConnector dbc = new dbConnector();
-       
+             
+             try{
+             String pass = PassWordH.hashPassword(pw.getText());
+             
+             
       if (dbc.insertData("INSERT INTO tbl_user (u_fname, u_lname, u_email, u_username, u_password, u_type, u_status) VALUES('"
-     + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','Pending')")){
+     + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" + us.getText() + "','" + pass + "','" + ut.getSelectedItem() + "','Pending')")){
           
         
           JOptionPane.showMessageDialog(null, "Inserted Successfully!");
@@ -169,7 +175,9 @@ public class registF extends javax.swing.JFrame {
       }else{
           JOptionPane.showMessageDialog(null, "Connection Error!");
       }
-            
+             }catch(NoSuchAlgorithmException ex){
+                 System.out.println(""+ex);
+             }    
         }        
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -228,7 +236,7 @@ public class registF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField ln;
     private javax.swing.JTextField mail;
-    private javax.swing.JTextField pw;
+    private javax.swing.JPasswordField pw;
     private javax.swing.JTextField us;
     private javax.swing.JComboBox<String> ut;
     // End of variables declaration//GEN-END:variables
