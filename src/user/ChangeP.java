@@ -105,10 +105,10 @@ public class ChangeP extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
 
         jLabel6.setText("NEW PASSWORD");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         jLabel4.setText("CONFIRM PASSWORD");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
         getContentPane().add(oldp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 190, -1));
         getContentPane().add(newp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 190, -1));
         getContentPane().add(firmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 190, -1));
@@ -172,15 +172,14 @@ public class ChangeP extends javax.swing.JFrame {
             String npass = PassWordH.hashPassword(newp.getText());    
            dbc.updateData("UPDATE tbl_user SET u_password = '"+npass+"'");
             String conpass = PassWordH.hashPassword(firmp.getText());    
-           dbc.updateData("UPDATE tbl_user SET u_password = '"+conpass+"'");
-           
-           
-           JOptionPane.showMessageDialog(null, "SUCCESSFULLY UPDATE");
+           dbc.updateData("UPDATE tbl_user SET  u_password = '"+conpass+"'");
+       
+         
+           JOptionPane.showMessageDialog(null, "PASSWORD SUCCESSFULLY CHANGE");
            loginF lf = new loginF();
            lf.setVisible(true);
            this.dispose();
-           
-           
+       
            }else{
                JOptionPane.showMessageDialog(null, "OLD PASSWORD IS INCORRECT");
            }

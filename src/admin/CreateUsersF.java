@@ -103,7 +103,6 @@ public class CreateUsersF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -117,7 +116,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         pw = new javax.swing.JTextField();
         ut = new javax.swing.JComboBox<>();
         add = new javax.swing.JButton();
-        ut1 = new javax.swing.JComboBox<>();
+        stat = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
@@ -127,12 +126,11 @@ public class CreateUsersF extends javax.swing.JFrame {
         del = new javax.swing.JButton();
         cl = new javax.swing.JButton();
         cc = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("CREATE FORM");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 164, 32));
 
         jLabel2.setText("User ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
@@ -172,8 +170,8 @@ public class CreateUsersF extends javax.swing.JFrame {
         });
         getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 80, -1));
 
-        ut1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));
-        getContentPane().add(ut1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 190, -1));
+        stat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));
+        getContentPane().add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 190, -1));
 
         jLabel8.setText("User Type");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
@@ -228,6 +226,15 @@ public class CreateUsersF extends javax.swing.JFrame {
         });
         getContentPane().add(cc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 80, -1));
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setLayout(null);
+
+        jLabel1.setText("CREATE FORM");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(280, 20, 164, 32);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 70));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -252,7 +259,7 @@ public class CreateUsersF extends javax.swing.JFrame {
        
       if (dbc.insertData("INSERT INTO tbl_user (u_fname, u_lname, u_email, u_username, u_password, u_type, u_status) VALUES('"
      + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" 
-     + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','"+ut1.getSelectedItem()+"')")){
+     + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','"+stat.getSelectedItem()+"')")){
           
         
           JOptionPane.showMessageDialog(null, "Inserted Successfully!");
@@ -292,7 +299,7 @@ public class CreateUsersF extends javax.swing.JFrame {
        dbc.updateData("UPDATE tbl_user SET u_fname = '"+fn.getText()+",u_lname'"+
        ln.getText()+",u_email'"+mail.getText()+",u_username'"+
        us.getText()+",u_password'"+pw.getText()+",u_type'"+ut.getSelectedItem()+",u_status'"
-       +ut1.getSelectedItem()+"WHERE u_id = '"+id.getText()+"'");
+       +stat.getSelectedItem()+"WHERE u_id = '"+id.getText()+"'");
        
        JOptionPane.showMessageDialog(null, "UPDATED SUCCESSFULLY!");
        userLoginF ads = new userLoginF();
@@ -370,13 +377,14 @@ public class CreateUsersF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField ln;
     public javax.swing.JTextField mail;
     public javax.swing.JTextField pw;
     private javax.swing.JButton rf;
+    public javax.swing.JComboBox<String> stat;
     public javax.swing.JButton up;
     public javax.swing.JTextField us;
     public javax.swing.JComboBox<String> ut;
-    public javax.swing.JComboBox<String> ut1;
     // End of variables declaration//GEN-END:variables
 }

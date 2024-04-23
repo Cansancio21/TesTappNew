@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
 import net.proteanit.sql.DbUtils;
-import static register.registF.email;
-import static register.registF.username;
 
 
 
@@ -65,13 +63,13 @@ public class userLoginF extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        acc_id = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         p_add = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         p_edit = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        acc_id = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -92,9 +90,6 @@ public class userLoginF extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/images.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, 90));
-
-        acc_id.setText("                     ID");
-        jPanel1.add(acc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 374, 140, 20));
 
         jLabel15.setText("              Current User");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 140, 20));
@@ -144,6 +139,10 @@ public class userLoginF extends javax.swing.JFrame {
         jLabel17.setBounds(50, 10, 70, 20);
 
         jPanel1.add(p_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, 30));
+
+        acc_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        acc_id.setText("ID");
+        jPanel1.add(acc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 374, 140, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 400));
 
@@ -249,7 +248,7 @@ public class userLoginF extends javax.swing.JFrame {
                   usf.us.setText(""+rs.getString("u_username"));
                   usf.pw.setText(""+rs.getString("u_password"));
                   usf.ut.setSelectedItem(""+rs.getString("u_type"));
-                  usf.ut1.setSelectedItem(""+rs.getString("u_status"));
+                  usf.stat.setSelectedItem(""+rs.getString("u_status"));
                   usf.add.setEnabled(false);
                   usf.up.setEnabled(true);
                   usf.setVisible(true);

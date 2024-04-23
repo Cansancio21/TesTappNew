@@ -50,7 +50,7 @@ public class loginF extends javax.swing.JFrame {
                String hashedPass = resultSet.getString("u_password");
                String rehashedPass = PassWordH.hashPassword(password);
                
-                  
+             
                if(hashedPass.equals(rehashedPass)){
                  status = resultSet.getString("u_status");
                  type = resultSet.getString("u_type");
