@@ -92,9 +92,14 @@ public class loginF extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         pw = new javax.swing.JPasswordField();
-        check = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        check = new javax.swing.JCheckBox();
+        jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -136,15 +141,7 @@ public class loginF extends javax.swing.JFrame {
         });
         getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 150, -1));
 
-        check.setText("show");
-        check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -153,7 +150,37 @@ public class loginF extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(240, 20, 180, 35);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 70));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 80));
+
+        jPanel2.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel2.setLayout(null);
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 260, 20));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setLayout(null);
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 260, 20));
+
+        jPanel4.setBackground(new java.awt.Color(51, 255, 51));
+        jPanel4.setLayout(null);
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 180, 20));
+
+        jPanel5.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel5.setLayout(null);
+
+        check.setText("show");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
+        jPanel5.add(check);
+        check.setBounds(10, 0, 51, 23);
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 70, 20));
+
+        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel6.setLayout(null);
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 610, 220));
 
         pack();
         setLocationRelativeTo(null);
@@ -251,6 +278,11 @@ public class loginF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField pw;
     private javax.swing.JTextField un;
     // End of variables declaration//GEN-END:variables

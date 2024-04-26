@@ -72,6 +72,7 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/images.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 90));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("LOG-OUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,9 +120,11 @@ public class ChangeP extends javax.swing.JFrame {
 
         jPanel3.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BACK");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(10, 10, 60, 14);
+        jLabel1.setBounds(10, 10, 60, 15);
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 80, 30));
 
@@ -132,13 +135,16 @@ public class ChangeP extends javax.swing.JFrame {
         });
         jPanel4.setLayout(null);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("SAVE");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(10, 10, 60, 14);
+        jLabel5.setBounds(10, 10, 60, 15);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 80, 30));
         getContentPane().add(firmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 190, -1));
 
+        check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check.setText("show");
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
