@@ -177,20 +177,20 @@ public class CreateUsersF extends javax.swing.JFrame {
                 fnActionPerformed(evt);
             }
         });
-        getContentPane().add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 190, -1));
+        getContentPane().add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 190, 20));
 
         ln.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 190, -1));
+        getContentPane().add(ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 190, 20));
 
         mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 190, -1));
+        getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 190, 20));
 
         us.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 190, -1));
+        getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 190, 20));
 
         ut.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", " " }));
-        getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 190, -1));
+        getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 190, 20));
 
         add.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         add.setText("ADD");
@@ -199,11 +199,11 @@ public class CreateUsersF extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 80, -1));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 90, 20));
 
         stat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         stat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Pending" }));
-        getContentPane().add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 190, -1));
+        getContentPane().add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 190, 20));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -217,7 +217,7 @@ public class CreateUsersF extends javax.swing.JFrame {
 
         id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         id.setEnabled(false);
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 190, -1));
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 190, 20));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -231,7 +231,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 rfActionPerformed(evt);
             }
         });
-        getContentPane().add(rf, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 80, -1));
+        getContentPane().add(rf, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 90, 20));
 
         del.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         del.setText("DELETE");
@@ -240,7 +240,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 delActionPerformed(evt);
             }
         });
-        getContentPane().add(del, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 80, -1));
+        getContentPane().add(del, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 90, 20));
 
         cl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cl.setText("CLEAR");
@@ -249,7 +249,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 clActionPerformed(evt);
             }
         });
-        getContentPane().add(cl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 80, -1));
+        getContentPane().add(cl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 90, 20));
 
         cc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cc.setText("CANCEL");
@@ -258,7 +258,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 ccActionPerformed(evt);
             }
         });
-        getContentPane().add(cc, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 80, -1));
+        getContentPane().add(cc, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 90, 20));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(null);
@@ -276,7 +276,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 pwActionPerformed(evt);
             }
         });
-        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 190, -1));
+        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 190, 20));
 
         check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check.setText("show");
@@ -303,7 +303,7 @@ public class CreateUsersF extends javax.swing.JFrame {
             }
         });
         jPanel3.add(up);
-        up.setBounds(10, 0, 80, 23);
+        up.setBounds(10, 0, 90, 20);
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 420, 20));
 

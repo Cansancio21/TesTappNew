@@ -43,7 +43,6 @@ public class accountD extends javax.swing.JFrame {
         idd = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         fn = new javax.swing.JTextField();
         ln = new javax.swing.JTextField();
@@ -51,6 +50,15 @@ public class accountD extends javax.swing.JFrame {
         us = new javax.swing.JTextField();
         ut = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -112,9 +120,6 @@ public class accountD extends javax.swing.JFrame {
         jLabel6.setText("Last Name");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
 
-        jLabel4.setText("Gmail");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, -1));
-
         jLabel5.setText("UserName");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
         getContentPane().add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 190, -1));
@@ -127,6 +132,43 @@ public class accountD extends javax.swing.JFrame {
 
         jLabel10.setText("User Type");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel3.setLayout(null);
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 270, 20));
+
+        jPanel4.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel4.setLayout(null);
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 270, 20));
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.setLayout(null);
+
+        jLabel4.setText("Gmail");
+        jPanel5.add(jLabel4);
+        jLabel4.setBounds(10, 0, 25, 14);
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 270, 20));
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.setLayout(null);
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 270, 20));
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel7.setLayout(null);
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 270, 20));
+
+        jPanel8.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel8.setLayout(null);
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 310, 160));
+
+        jPanel9.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel9.setLayout(null);
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 350, 180));
+
+        jPanel10.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel10.setLayout(null);
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 530, 250));
 
         pack();
         setLocationRelativeTo(null);
@@ -209,7 +251,15 @@ public class accountD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField ln;
     private javax.swing.JTextField mail;
     private javax.swing.JTextField us;

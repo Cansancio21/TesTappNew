@@ -45,8 +45,6 @@ public class ChangeP extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         idd = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         oldp = new javax.swing.JTextField();
         newp = new javax.swing.JTextField();
@@ -56,6 +54,16 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         firmp = new javax.swing.JPasswordField();
         check = new javax.swing.JCheckBox();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -70,7 +78,7 @@ public class ChangeP extends javax.swing.JFrame {
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/images.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 90));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, 70));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("LOG-OUT");
@@ -79,19 +87,21 @@ public class ChangeP extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         acc_ln.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        acc_ln.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_ln.setText("USER");
-        jPanel1.add(acc_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 50, 30));
+        jPanel1.add(acc_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 140, 20));
 
         acc_fn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        acc_fn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_fn.setText("ACC_FN");
-        jPanel1.add(acc_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 50, 30));
+        jPanel1.add(acc_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 360));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -99,24 +109,17 @@ public class ChangeP extends javax.swing.JFrame {
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 190, 34));
 
         idd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        idd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         idd.setText("(UID)");
-        jPanel2.add(idd, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 50, 30));
+        jPanel2.add(idd, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 90, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 530, 60));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("OLD PASSWORD");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("NEW PASSWORD");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("CONFIRM PASSWORD");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
-        getContentPane().add(oldp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 190, -1));
-        getContentPane().add(newp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 190, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 235, -1, 10));
+        getContentPane().add(oldp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 190, 20));
+        getContentPane().add(newp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 190, 20));
 
         jPanel3.setLayout(null);
 
@@ -124,9 +127,9 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BACK");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(10, 10, 60, 15);
+        jLabel1.setBounds(10, 0, 60, 20);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 80, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 80, 20));
 
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,10 +142,10 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("SAVE");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(10, 10, 60, 15);
+        jLabel5.setBounds(10, 0, 60, 20);
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 80, 30));
-        getContentPane().add(firmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 190, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 80, 20));
+        getContentPane().add(firmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 190, 20));
 
         check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check.setText("show");
@@ -151,7 +154,53 @@ public class ChangeP extends javax.swing.JFrame {
                 checkActionPerformed(evt);
             }
         });
-        getContentPane().add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
+        getContentPane().add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, 20));
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("OLD PASSWORD");
+        jPanel5.add(jLabel3);
+        jLabel3.setBounds(20, 5, 101, 10);
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 340, 20));
+
+        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel6.setLayout(null);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("NEW PASSWORD");
+        jPanel6.add(jLabel6);
+        jLabel6.setBounds(20, 5, 103, 10);
+
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 340, 20));
+
+        jPanel7.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel7.setLayout(null);
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 350, 20));
+
+        jPanel8.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel8.setLayout(null);
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
+
+        jPanel9.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel9.setLayout(null);
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 190, 20));
+
+        jPanel10.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel10.setLayout(null);
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 380, 250));
+
+        jPanel11.setBackground(new java.awt.Color(51, 0, 255));
+        jPanel11.setLayout(null);
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 430, 300));
+
+        jPanel12.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel12.setLayout(null);
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 100, 300));
 
         pack();
         setLocationRelativeTo(null);
@@ -276,9 +325,17 @@ public class ChangeP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField newp;
     private javax.swing.JTextField oldp;
     // End of variables declaration//GEN-END:variables
