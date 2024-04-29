@@ -86,94 +86,28 @@ public class loginF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        un = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        check = new javax.swing.JCheckBox();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         pw = new javax.swing.JPasswordField();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        check = new javax.swing.JCheckBox();
-        jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        un = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        un.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 150, 20));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("UserName");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("PassWord");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
-
-        pw.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pwActionPerformed(evt);
-            }
-        });
-        getContentPane().add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 150, 20));
-
-        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
-        jPanel1.setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("LOG-IN FORM");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(240, 20, 180, 35);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 80));
-
-        jPanel2.setBackground(new java.awt.Color(0, 255, 255));
-        jPanel2.setLayout(null);
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 250, 20));
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setLayout(null);
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 250, 20));
-
-        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel6.setLayout(null);
-
-        jPanel5.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel5.setLayout(null);
-
-        check.setText("show");
-        check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkActionPerformed(evt);
-            }
-        });
-        jPanel5.add(check);
-        check.setBounds(0, 0, 70, 20);
-
-        jPanel6.add(jPanel5);
-        jPanel5.setBounds(330, 70, 70, 20);
+        setPreferredSize(new java.awt.Dimension(550, 350));
+        getContentPane().setLayout(null);
 
         jPanel4.setBackground(new java.awt.Color(51, 255, 51));
         jPanel4.setLayout(null);
 
-        jButton1.setText("LOG-IN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton1);
-        jButton1.setBounds(0, 0, 80, 20);
-
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("REGISTER");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,12 +115,85 @@ public class loginF extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton2);
-        jButton2.setBounds(91, 0, 90, 20);
+        jButton2.setBounds(0, 0, 100, 20);
 
-        jPanel6.add(jPanel4);
-        jPanel4.setBounds(240, 110, 180, 20);
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setText("LOG-IN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1);
+        jButton1.setBounds(100, 0, 80, 20);
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 610, 220));
+        getContentPane().add(jPanel4);
+        jPanel4.setBounds(230, 210, 180, 20);
+
+        check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        check.setText("Show");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(check);
+        check.setBounds(330, 180, 70, 20);
+
+        jPanel5.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel5.setLayout(null);
+        getContentPane().add(jPanel5);
+        jPanel5.setBounds(330, 180, 70, 20);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("PassWord");
+        jPanel3.add(jLabel3);
+        jLabel3.setBounds(10, 0, 60, 30);
+
+        pw.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwActionPerformed(evt);
+            }
+        });
+        jPanel3.add(pw);
+        pw.setBounds(90, 0, 150, 30);
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(160, 140, 250, 30);
+
+        jPanel2.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel2.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("UserName");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(10, 0, 59, 30);
+
+        un.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(un);
+        un.setBounds(90, 0, 150, 30);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(160, 110, 250, 30);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("LOG-IN FORM");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(190, 60, 180, 35);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\loginform.jpg")); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 590, 310);
 
         pack();
         setLocationRelativeTo(null);
@@ -194,51 +201,49 @@ public class loginF extends javax.swing.JFrame {
 
     
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      if(loginAcc(un.getText(), pw.getText())){
-          if(!status.equals("Active")){
-              JOptionPane.showMessageDialog(null, "in active");
-          }else{
-              if(type.equals("Admin")){
-                  JOptionPane.showMessageDialog(null, "login");
-                  dashboard ads = new dashboard();                
-                  ads.setVisible(true);
-                  this.dispose();
-              }else if(type.equals("User")){
-                  JOptionPane.showMessageDialog(null, "login");
-                  userDash uds = new userDash();              
-                  uds.setVisible(true);
-                  this.dispose();
-              }else{
-                   JOptionPane.showMessageDialog(null, "No account");
-              }
-          }
-          
-      }else{
-          JOptionPane.showMessageDialog(null, "Invalid Account");
-      }
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      registF ads = new registF();
-       ads.setVisible(true);
-      this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void pwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pwActionPerformed
 
-    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
-         boolean isSelected = check.isSelected();
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        registF ads = new registF();
+        ads.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    if (isSelected) {      
-        pw.setEchoChar((char)0);
-    } else {      
-        pw.setEchoChar('*'); 
-    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(loginAcc(un.getText(), pw.getText())){
+            if(!status.equals("Active")){
+                JOptionPane.showMessageDialog(null, "in active");
+            }else{
+                if(type.equals("Admin")){
+                    JOptionPane.showMessageDialog(null, "login");
+                    dashboard ads = new dashboard();
+                    ads.setVisible(true);
+                    this.dispose();
+                }else if(type.equals("User")){
+                    JOptionPane.showMessageDialog(null, "login");
+                    userDash uds = new userDash();
+                    uds.setVisible(true);
+                    this.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "No account");
+                }
+            }
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Invalid Account");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
+        boolean isSelected = check.isSelected();
+
+        if (isSelected) {
+            pw.setEchoChar((char)0);
+        } else {
+            pw.setEchoChar('*');
+        }
     }//GEN-LAST:event_checkActionPerformed
 
     /**
@@ -283,12 +288,11 @@ public class loginF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField pw;
     private javax.swing.JTextField un;
     // End of variables declaration//GEN-END:variables
