@@ -206,6 +206,8 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel8.setText("CHANGE PASSWORD");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(250, 20, 240, 40);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(140, 0, 410, 370);
 
@@ -215,6 +217,8 @@ public class ChangeP extends javax.swing.JFrame {
         idd.setText("(UID)");
         getContentPane().add(idd);
         idd.setBounds(550, 20, 120, 40);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel10);
         jLabel10.setBounds(550, 0, 120, 370);
 

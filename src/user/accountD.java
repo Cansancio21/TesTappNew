@@ -55,12 +55,13 @@ public class accountD extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(650, 450));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -161,7 +162,7 @@ public class accountD extends javax.swing.JFrame {
 
         jLabel4.setText("Gmail");
         jPanel5.add(jLabel4);
-        jLabel4.setBounds(0, 0, 70, 30);
+        jLabel4.setBounds(0, 0, 70, 20);
 
         getContentPane().add(jPanel5);
         jPanel5.setBounds(260, 160, 270, 30);
@@ -176,6 +177,9 @@ public class accountD extends javax.swing.JFrame {
         getContentPane().add(jPanel7);
         jPanel7.setBounds(260, 220, 270, 30);
 
+        jPanel9.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel9.setLayout(null);
+
         jPanel8.setBackground(new java.awt.Color(102, 102, 255));
         jPanel8.setLayout(null);
 
@@ -184,13 +188,13 @@ public class accountD extends javax.swing.JFrame {
         jPanel8.add(jPanel3);
         jPanel3.setBounds(20, 0, 270, 30);
 
-        getContentPane().add(jPanel8);
-        jPanel8.setBounds(240, 100, 310, 160);
+        jPanel9.add(jPanel8);
+        jPanel8.setBounds(20, 10, 310, 160);
 
-        jPanel9.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel9.setLayout(null);
         getContentPane().add(jPanel9);
         jPanel9.setBounds(220, 90, 350, 180);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(140, 60, 530, 250);
 

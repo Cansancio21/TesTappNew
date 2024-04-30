@@ -190,6 +190,8 @@ public class loginF extends javax.swing.JFrame {
         jLabel1.setText("LOG-IN FORM");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(190, 60, 180, 35);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(0, 0, 590, 310);
 

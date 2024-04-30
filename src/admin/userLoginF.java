@@ -76,9 +76,9 @@ public class userLoginF extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         usersOnly = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(750, 450));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -193,10 +193,6 @@ public class userLoginF extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(150, 70, 690, 310);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\details.jpg")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 60, 710, 340);
 
         pack();
         setLocationRelativeTo(null);
@@ -317,7 +313,6 @@ public class userLoginF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

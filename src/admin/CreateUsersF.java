@@ -63,30 +63,34 @@ public class CreateUsersF extends javax.swing.JFrame {
     
     public boolean UpdateCheck(){
         
-        dbConnector dbc = new dbConnector();
+       dbConnector dbc = new dbConnector();
         
         try{
-            System.out.println(",");
-            String query = "SELECT * FROM tbl_user WHERE (u_username = '"+us.getText()+"' OR u_email = '"+mail.getText()+"')AND u_id ! = '"+id.getText()+"'";
+            String query = "SELECT * FROM tbl_user  WHERE (u_username = '" +us.getText()+ "' OR u_email = '" +mail.getText()+ "') AND u_id != '"+id.getText()+"'";
             ResultSet resultSet = dbc.getData(query);
             
-            if(resultSet.next()){
+            if(resultSet.next()){ 
                 email = resultSet.getString("u_email");
+   
                 if(email.equals(mail.getText())){
-                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
-                      mail.setText("");
+                    JOptionPane.showMessageDialog(null, "Email is already used!");
+                    mail.setText("");
+                    
                 }
+                    
                 username = resultSet.getString("u_username");
                 if(username.equals(us.getText())){
-                      JOptionPane.showMessageDialog(null, "Email is Already Used!");
-                      us.setText("");
-            }
-            return true;
+                    JOptionPane.showMessageDialog(null, "Username is already used!");
+                    us.setText("");
+                    
+                }
+                return true;
             }else{
                 return false;
+                
             }
-          
-        }catch (SQLException ex) {
+            
+        }catch(SQLException ex){
             System.out.println(""+ex);
             return false;
         }
@@ -145,9 +149,8 @@ public class CreateUsersF extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(650, 460));
-        getContentPane().setLayout(null);
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(160, 310, 0, 0);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
 
         fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fn.addActionListener(new java.awt.event.ActionListener() {
@@ -155,30 +158,24 @@ public class CreateUsersF extends javax.swing.JFrame {
                 fnActionPerformed(evt);
             }
         });
-        getContentPane().add(fn);
-        fn.setBounds(320, 170, 190, 30);
+        getContentPane().add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 190, 30));
 
         ln.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(ln);
-        ln.setBounds(320, 200, 190, 30);
+        getContentPane().add(ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 190, 30));
 
         mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(mail);
-        mail.setBounds(320, 230, 190, 30);
+        getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 190, 30));
 
         us.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(us);
-        us.setBounds(320, 260, 190, 30);
+        getContentPane().add(us, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 190, 30));
 
         ut.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", " " }));
-        getContentPane().add(ut);
-        ut.setBounds(320, 360, 190, 30);
+        getContentPane().add(ut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 190, 30));
 
         id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         id.setEnabled(false);
-        getContentPane().add(id);
-        id.setBounds(320, 140, 190, 30);
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 190, 30));
 
         check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check.setText("show");
@@ -187,8 +184,7 @@ public class CreateUsersF extends javax.swing.JFrame {
                 checkActionPerformed(evt);
             }
         });
-        getContentPane().add(check);
-        check.setBounds(320, 330, 59, 20);
+        getContentPane().add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, 20));
 
         jPanel2.setBackground(new java.awt.Color(0, 255, 255));
         jPanel2.setLayout(null);
@@ -210,8 +206,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel2.add(add);
         add.setBounds(10, 0, 90, 30);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(100, 140, 420, 30);
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 420, 30));
 
         jPanel3.setBackground(new java.awt.Color(0, 255, 255));
         jPanel3.setLayout(null);
@@ -233,8 +228,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel3.add(del);
         del.setBounds(10, 0, 90, 30);
 
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(100, 170, 420, 30);
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 420, 30));
 
         jPanel4.setBackground(new java.awt.Color(255, 51, 51));
         jPanel4.setLayout(null);
@@ -257,8 +251,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel4.add(up);
         up.setBounds(10, 0, 90, 30);
 
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(100, 200, 420, 30);
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 420, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 51, 51));
         jPanel5.setLayout(null);
@@ -280,8 +273,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel5.add(cl);
         cl.setBounds(10, 0, 90, 30);
 
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(100, 230, 420, 30);
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 420, 30));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
         jPanel6.setLayout(null);
@@ -303,8 +295,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel6.add(cc);
         cc.setBounds(10, 0, 90, 30);
 
-        getContentPane().add(jPanel6);
-        jPanel6.setBounds(100, 260, 420, 30);
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 420, 30));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
         jPanel7.setLayout(null);
@@ -333,8 +324,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel7.add(pw);
         pw.setBounds(220, 0, 190, 30);
 
-        getContentPane().add(jPanel7);
-        jPanel7.setBounds(100, 290, 420, 30);
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 420, 30));
 
         jPanel8.setBackground(new java.awt.Color(255, 204, 204));
         jPanel8.setLayout(null);
@@ -345,8 +335,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel8.add(jLabel8);
         jLabel8.setBounds(-1, 0, 80, 30);
 
-        getContentPane().add(jPanel8);
-        jPanel8.setBounds(230, 360, 290, 30);
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 290, 30));
 
         jPanel9.setBackground(new java.awt.Color(255, 204, 204));
         jPanel9.setLayout(null);
@@ -362,8 +351,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel9.add(stat);
         stat.setBounds(90, 0, 190, 30);
 
-        getContentPane().add(jPanel9);
-        jPanel9.setBounds(230, 390, 290, 30);
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 290, 30));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 255));
         jPanel12.setLayout(null);
@@ -374,19 +362,15 @@ public class CreateUsersF extends javax.swing.JFrame {
         jPanel12.add(jLabel11);
         jLabel11.setBounds(10, 10, 110, 80);
 
-        getContentPane().add(jPanel12);
-        jPanel12.setBounds(0, 0, 130, 100);
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(0, 100, 640, 370);
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 100));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 640, 370));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CREATEUSERFORM");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 20, 330, 60);
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(130, 0, 520, 110);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 330, 60));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 520, 110));
 
         pack();
         setLocationRelativeTo(null);
@@ -413,7 +397,7 @@ public class CreateUsersF extends javax.swing.JFrame {
              String pass = PassWordH.hashPassword(pw.getText());
 
                  System.out.println(",");
-      if (dbc.insertData("INSERT INTO tbl_user(u_fname,u_lname,u_email,u_username,u_password,u_type,u_status)VALUES('"
+      if (dbc.insertData("INSERT INTO tbl_user(u_fname, u_lname, u_email,u_username,u_password,u_type,u_status)VALUES('"
      + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" 
      + us.getText() + "','" + pass + "','" + ut.getSelectedItem() + "','"+stat.getSelectedItem()+"')")){
           
@@ -422,7 +406,7 @@ public class CreateUsersF extends javax.swing.JFrame {
           userLoginF ads = new userLoginF();
          ads.setVisible(true);
          this.dispose();
-          UpdateCheck();
+        
       }else{
           JOptionPane.showMessageDialog(null, "Connection Error!");
       }
@@ -453,11 +437,8 @@ public class CreateUsersF extends javax.swing.JFrame {
             System.out.println("Duplicate Exist!");
             
         }else{
-        dbConnector dbc = new dbConnector();
-       dbc.updateData("UPDATE tbl_user SET u_fname = '"+fn.getText()+"'u_lname'"+
-       ln.getText()+"'u_email'"+mail.getText()+"'u_username'"+
-       us.getText()+"'u_password'"+pw.getText()+"'u_type'"+ut.getSelectedItem()+"'u_status'"
-       +stat.getSelectedItem()+"WHERE u_id = '"+id.getText()+"'");
+       dbConnector dbc = new dbConnector();
+      dbc.updateData("UPDATE tbl_user SET u_fname ='"+fn.getText()+"', u_lname ='"+ln.getText()+"', u_email ='"+mail.getText()+"', u_username ='"+us.getText()+"', u_password ='"+pw.getText()+"', u_type ='"+ut.getSelectedItem()+"', u_status ='"+stat.getSelectedItem()+"' WHERE u_id ='"+id.getText()+"'");
        
        JOptionPane.showMessageDialog(null, "UPDATED SUCCESSFULLY!");
        userLoginF ads = new userLoginF();

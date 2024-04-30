@@ -42,6 +42,7 @@ public class userDash extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(550, 350));
@@ -85,7 +86,7 @@ public class userDash extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 10, 230, 34));
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(140, 0, 530, 60);
+        jPanel2.setBounds(140, 0, 540, 60);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,7 +111,11 @@ public class userDash extends javax.swing.JFrame {
         getContentPane().add(jPanel4);
         jPanel4.setBounds(300, 110, 180, 130);
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 60, 530, 250);
+        jLabel3.setBounds(270, 90, 240, 180);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(140, 60, 540, 250);
 
         pack();
         setLocationRelativeTo(null);
@@ -185,6 +190,7 @@ public class userDash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

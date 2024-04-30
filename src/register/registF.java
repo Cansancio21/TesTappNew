@@ -80,7 +80,6 @@ public class registF extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         fn = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -95,6 +94,7 @@ public class registF extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -104,7 +104,6 @@ public class registF extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(650, 450));
@@ -148,12 +147,6 @@ public class registF extends javax.swing.JFrame {
         fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(fn);
         fn.setBounds(310, 110, 180, 30);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("First Name");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(223, 115, 80, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -247,6 +240,13 @@ public class registF extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(102, 255, 255));
         jPanel4.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("First Name");
+        jPanel4.add(jLabel2);
+        jLabel2.setBounds(0, 10, 90, 20);
+
         getContentPane().add(jPanel4);
         jPanel4.setBounds(220, 110, 280, 30);
 
@@ -290,8 +290,6 @@ public class registF extends javax.swing.JFrame {
         jPanel13.setLayout(null);
         getContentPane().add(jPanel13);
         jPanel13.setBounds(170, 90, 380, 320);
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, 90, 670, 370);
 
         pack();
         setLocationRelativeTo(null);
@@ -405,7 +403,6 @@ public class registF extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -111,6 +111,8 @@ public class dashboard extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(310, 110, 180, 130);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(140, 60, 530, 290);
 
