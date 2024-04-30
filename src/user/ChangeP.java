@@ -106,6 +106,12 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel4.setText("CONFIRM PASSWORD");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(190, 225, 132, 20);
+
+        oldp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oldpActionPerformed(evt);
+            }
+        });
         getContentPane().add(oldp);
         oldp.setBounds(330, 100, 190, 30);
         getContentPane().add(newp);
@@ -200,8 +206,6 @@ public class ChangeP extends javax.swing.JFrame {
         jLabel8.setText("CHANGE PASSWORD");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(250, 20, 240, 40);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\loginform.jpg")); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(140, 0, 410, 370);
 
@@ -211,8 +215,6 @@ public class ChangeP extends javax.swing.JFrame {
         idd.setText("(UID)");
         getContentPane().add(idd);
         idd.setBounds(550, 20, 120, 40);
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\loginform.jpg")); // NOI18N
         getContentPane().add(jLabel10);
         jLabel10.setBounds(550, 0, 120, 370);
 
@@ -281,6 +283,10 @@ public class ChangeP extends javax.swing.JFrame {
         firmp.setEchoChar('*'); 
     }
     }//GEN-LAST:event_checkActionPerformed
+
+    private void oldpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oldpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oldpActionPerformed
 
     /**
      * @param args the command line arguments

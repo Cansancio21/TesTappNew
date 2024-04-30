@@ -61,7 +61,6 @@ public class accountD extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 350));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -192,8 +191,6 @@ public class accountD extends javax.swing.JFrame {
         jPanel9.setLayout(null);
         getContentPane().add(jPanel9);
         jPanel9.setBounds(220, 90, 350, 180);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\loginform.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(140, 60, 530, 250);
 

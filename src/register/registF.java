@@ -290,8 +290,6 @@ public class registF extends javax.swing.JFrame {
         jPanel13.setLayout(null);
         getContentPane().add(jPanel13);
         jPanel13.setBounds(170, 90, 380, 320);
-
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\dashboard1.jpg")); // NOI18N
         getContentPane().add(jLabel11);
         jLabel11.setBounds(0, 90, 670, 370);
 

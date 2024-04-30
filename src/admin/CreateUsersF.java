@@ -6,7 +6,9 @@
 package admin;
 
 
+import config.PassWordH;
 import config.dbConnector;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -64,8 +66,8 @@ public class CreateUsersF extends javax.swing.JFrame {
         dbConnector dbc = new dbConnector();
         
         try{
-            System.out.println("");
-            String query = "SELECT * FROM tbl_user WHERE(u_username = '"+us.getText()+"' OR u_email = '"+mail.getText()+"')AND u_id !='"+id.getText()+"'";
+            System.out.println(",");
+            String query = "SELECT * FROM tbl_user WHERE (u_username = '"+us.getText()+"' OR u_email = '"+mail.getText()+"')AND u_id ! = '"+id.getText()+"'";
             ResultSet resultSet = dbc.getData(query);
             
             if(resultSet.next()){
@@ -198,6 +200,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel2.setBounds(140, 0, 44, 30);
 
         add.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 0, 0));
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +223,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel10.setBounds(140, 0, 63, 30);
 
         del.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        del.setForeground(new java.awt.Color(255, 51, 51));
         del.setText("DELETE");
         del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +236,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         getContentPane().add(jPanel3);
         jPanel3.setBounds(100, 170, 420, 30);
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 51, 51));
         jPanel4.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -242,6 +246,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel3.setBounds(140, 0, 63, 30);
 
         up.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        up.setForeground(new java.awt.Color(0, 0, 255));
         up.setText("UPDATE");
         up.setEnabled(false);
         up.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +260,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         getContentPane().add(jPanel4);
         jPanel4.setBounds(100, 200, 420, 30);
 
-        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.setBackground(new java.awt.Color(255, 51, 51));
         jPanel5.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -265,6 +270,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel4.setBounds(140, 0, 32, 30);
 
         cl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cl.setForeground(new java.awt.Color(0, 0, 255));
         cl.setText("CLEAR");
         cl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,6 +293,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel5.setBounds(140, 0, 59, 30);
 
         cc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cc.setForeground(new java.awt.Color(153, 0, 153));
         cc.setText("CANCEL");
         cc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,6 +315,7 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel13.setBounds(140, 0, 70, 30);
 
         rf.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rf.setForeground(new java.awt.Color(102, 0, 255));
         rf.setText("REFRESH");
         rf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,8 +376,6 @@ public class CreateUsersF extends javax.swing.JFrame {
 
         getContentPane().add(jPanel12);
         jPanel12.setBounds(0, 0, 130, 100);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Pictures\\backround.jpg")); // NOI18N
         getContentPane().add(jLabel12);
         jLabel12.setBounds(0, 100, 640, 370);
 
@@ -379,8 +385,6 @@ public class CreateUsersF extends javax.swing.JFrame {
         jLabel1.setText("CREATEUSERFORM");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(200, 20, 330, 60);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\loginform.jpg")); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(130, 0, 520, 110);
 
@@ -405,21 +409,26 @@ public class CreateUsersF extends javax.swing.JFrame {
         }else{
             
              dbConnector dbc = new dbConnector();
-       
-      if (dbc.insertData("INSERT INTO tbl_user (u_fname, u_lname, u_email, u_username, u_password, u_type, u_status) VALUES('"
+             try{
+             String pass = PassWordH.hashPassword(pw.getText());
+
+                 System.out.println(",");
+      if (dbc.insertData("INSERT INTO tbl_user(u_fname,u_lname,u_email,u_username,u_password,u_type,u_status)VALUES('"
      + fn.getText() + "','"+ln.getText()+"','"+ mail.getText() + "','" 
-     + us.getText() + "','" + pw.getText() + "','" + ut.getSelectedItem() + "','"+stat.getSelectedItem()+"')")){
+     + us.getText() + "','" + pass + "','" + ut.getSelectedItem() + "','"+stat.getSelectedItem()+"')")){
           
         
           JOptionPane.showMessageDialog(null, "Inserted Successfully!");
           userLoginF ads = new userLoginF();
          ads.setVisible(true);
          this.dispose();
-          
+          UpdateCheck();
       }else{
           JOptionPane.showMessageDialog(null, "Connection Error!");
       }
-            
+             }catch(NoSuchAlgorithmException ex) {
+                 System.out.println(""+ex);
+             }  
         }        
         
     }//GEN-LAST:event_addActionPerformed
@@ -445,9 +454,9 @@ public class CreateUsersF extends javax.swing.JFrame {
             
         }else{
         dbConnector dbc = new dbConnector();
-       dbc.updateData("UPDATE tbl_user SET u_fname = '"+fn.getText()+",u_lname'"+
-       ln.getText()+",u_email'"+mail.getText()+",u_username'"+
-       us.getText()+",u_password'"+pw.getText()+",u_type'"+ut.getSelectedItem()+",u_status'"
+       dbc.updateData("UPDATE tbl_user SET u_fname = '"+fn.getText()+"'u_lname'"+
+       ln.getText()+"'u_email'"+mail.getText()+"'u_username'"+
+       us.getText()+"'u_password'"+pw.getText()+"'u_type'"+ut.getSelectedItem()+"'u_status'"
        +stat.getSelectedItem()+"WHERE u_id = '"+id.getText()+"'");
        
        JOptionPane.showMessageDialog(null, "UPDATED SUCCESSFULLY!");

@@ -109,8 +109,6 @@ public class userDash extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(300, 110, 180, 130);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\dashboard1.jpg")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(140, 60, 530, 250);
 
