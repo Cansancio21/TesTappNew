@@ -6,6 +6,7 @@
 package testappnew;
 
 import admin.dashboard;
+import admin.frontdesk;
 
 import config.PassWordH;
 import config.Session;
@@ -190,8 +191,6 @@ public class loginF extends javax.swing.JFrame {
         jLabel1.setText("LOG-IN FORM");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(190, 60, 180, 35);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(0, 0, 590, 310);
 
@@ -226,7 +225,14 @@ public class loginF extends javax.swing.JFrame {
                     userDash uds = new userDash();
                     uds.setVisible(true);
                     this.dispose();
+                }else if(type.equals("Frontd")){
+                    JOptionPane.showMessageDialog(null, "login");
+                    frontdesk uds = new frontdesk();
+                    uds.setVisible(true);
+                    this.dispose();
+                    
                 }else{
+                    
                     JOptionPane.showMessageDialog(null, "No account");
                 }
             }

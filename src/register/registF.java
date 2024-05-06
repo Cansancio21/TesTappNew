@@ -214,7 +214,7 @@ public class registF extends javax.swing.JFrame {
         check.setBounds(440, 270, 59, 23);
 
         ut.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", " " }));
+        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User", "Admin", "FrontDesk", " " }));
         getContentPane().add(ut);
         ut.setBounds(310, 300, 180, 20);
 

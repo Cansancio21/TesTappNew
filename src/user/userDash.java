@@ -6,6 +6,7 @@
 package user;
 
 
+import admin.CreateUsersF;
 import config.Session;
 import javax.swing.JOptionPane;
 import testappnew.loginF;
@@ -41,8 +42,15 @@ public class userDash extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(550, 350));
@@ -100,22 +108,85 @@ public class userDash extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(0, 10, 180, 70);
+        jLabel4.setBounds(0, 0, 180, 70);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ACCOUNT");
+        jLabel5.setText("FOOD");
         jPanel4.add(jLabel5);
         jLabel5.setBounds(0, 80, 180, 20);
 
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(300, 110, 180, 130);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(270, 90, 240, 180);
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel5MouseClicked(evt);
+            }
+        });
+        jPanel5.setLayout(null);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\SCC-COLLEGE\\Documents\\loginf.jpg")); // NOI18N
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(140, 60, 540, 250);
+        jLabel7.setBackground(new java.awt.Color(0, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
+        jPanel5.add(jLabel7);
+        jLabel7.setBounds(0, 10, 180, 70);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("FOOD");
+        jPanel5.add(jLabel8);
+        jLabel8.setBounds(0, 80, 180, 20);
+
+        jPanel4.add(jPanel5);
+        jPanel5.setBounds(300, 110, 180, 130);
+
+        getContentPane().add(jPanel4);
+        jPanel4.setBounds(490, 120, 180, 130);
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
+        jPanel6.setLayout(null);
+
+        jLabel9.setBackground(new java.awt.Color(0, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
+        jPanel6.add(jLabel9);
+        jLabel9.setBounds(0, 10, 180, 70);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("ACCOUNT");
+        jPanel6.add(jLabel10);
+        jLabel10.setBounds(0, 80, 180, 20);
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
+        jPanel7.setLayout(null);
+
+        jLabel11.setBackground(new java.awt.Color(0, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
+        jPanel7.add(jLabel11);
+        jLabel11.setBounds(0, 10, 180, 70);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("FOOD");
+        jPanel7.add(jLabel12);
+        jLabel12.setBounds(0, 80, 180, 20);
+
+        jPanel6.add(jPanel7);
+        jPanel7.setBounds(300, 110, 180, 130);
+
+        getContentPane().add(jPanel6);
+        jPanel6.setBounds(210, 100, 180, 130);
 
         pack();
         setLocationRelativeTo(null);
@@ -129,7 +200,7 @@ public class userDash extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        accountD ads = new accountD();
+        CreateUsersF ads = new CreateUsersF();
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
@@ -145,6 +216,20 @@ public class userDash extends javax.swing.JFrame {
         }
         acc_fname.setText(""+sess.getFname());
     }//GEN-LAST:event_formWindowActivated
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel5MouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        accountD ads = new accountD();
+        ads.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -186,13 +271,20 @@ public class userDash extends javax.swing.JFrame {
     public javax.swing.JLabel acc_fname;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }

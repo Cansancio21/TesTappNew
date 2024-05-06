@@ -13,12 +13,12 @@ import testappnew.loginF;
  *
  * @author User
  */
-public class dashboard extends javax.swing.JFrame {
+public class frontdesk extends javax.swing.JFrame {
 
     /**
      * Creates new form dashboard
      */
-    public dashboard() {
+    public frontdesk() {
         initComponents();
     }
 
@@ -41,16 +41,15 @@ public class dashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(550, 350));
+        setMinimumSize(new java.awt.Dimension(650, 450));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
         });
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,8 +75,7 @@ public class dashboard extends javax.swing.JFrame {
         acc_lname.setText("ADMIN");
         jPanel1.add(acc_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 130, 140, 10));
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 140, 350);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 350));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,11 +83,10 @@ public class dashboard extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADMIN-DASHBOARD");
+        jLabel1.setText("Front Desk");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 240, 34));
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(140, 0, 530, 60);
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 530, 60));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,10 +106,7 @@ public class dashboard extends javax.swing.JFrame {
         jPanel4.add(jLabel5);
         jLabel5.setBounds(60, 80, 50, 20);
 
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(310, 110, 180, 130);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 60, 530, 290);
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 180, 130));
 
         pack();
         setLocationRelativeTo(null);
@@ -126,7 +120,7 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-       CreateUsersF us = new CreateUsersF();
+       userLoginF us = new userLoginF();
        us.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jPanel4MouseClicked
@@ -161,20 +155,21 @@ public class dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frontdesk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frontdesk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frontdesk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frontdesk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dashboard().setVisible(true);
+                new frontdesk().setVisible(true);
             }
         });
     }
@@ -185,7 +180,6 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
